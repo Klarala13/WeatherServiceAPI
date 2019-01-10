@@ -1,0 +1,27 @@
+{
+  "name": "weather_api",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Klara",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klarala13/Weather-Client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Klarala13/Weather-Client/issues"
+  },
+  "homepage": "https://github.com/Klarala13/Weather-Client#readme",
+  "description": "Weather API"
+}
