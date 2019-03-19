@@ -1,15 +1,13 @@
-import WeatherApi from "lib/WeatherApi";
+const WeatherApi = require("../lib/WeatherApi");
 require("dotenv").config();
 
 const weather = new WeatherApi(process.env.API_KEY);
-const city = process.argv[2].trim();
-const country = process.argv[3].trim();
 const zip = process.argv[2].trim();
+const country = process.argv[3].trim();
 
-if (!city) {
-  console.log("Not a valid City");
-  process.exit();
-} else if (!country) {
+console.log(process.env.API_KEY)
+
+  if (!country) {
   console.log("Not a valid Country")
   process.exit();
 } else if (!zip) {
