@@ -1,6 +1,7 @@
-const WeatherClient =  require('../lib/weather_client');
+import weatherClient from 'lib/WeatherClient';
+
+//const WeatherClient =  require('../lib/weather_client');
 const city = process.argv[2].trim();
-console.log(city);
 
 if (!city) {
   console.log("Not a City");
@@ -13,7 +14,5 @@ weatherClient.getWeather().then(data => {
   console.log(data, entries + providerLine);
 });
 
-//document.querySelector("#display").textContent =  weatherClient();
+document.querySelector("#main").textContent =  `The weather in ${this.city} currently is ${getWeather()}`
 
-
-//create function to get inputed city
