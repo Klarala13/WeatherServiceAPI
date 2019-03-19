@@ -1,18 +1,27 @@
 import weatherClient from 'lib/WeatherClient';
+require("dotenv").config();
 
-//const WeatherClient =  require('../lib/weather_client');
+const weather = new WeatherAPI(process.env.API_KEY);
 const city = process.argv[2].trim();
+const country = process.argv[3].trim();
+const zip = process.argv[2].trim();
+const zipRegex = /\d{4,6}/g;
 
 if (!city) {
-  console.log("Not a City");
+  console.log("Not a valid City");
+  process.exit();
+} else if (!country) {
+  console.log("Not a valid Country")
+  process.exit();
+} else if (!zip) {
+  console.log("Not a valid ZipCode, must be a number");
   process.exit();
 }
 
-const weatherClient = new WeatherClient('deb259d889dfe62ade7f8dbf318ef846', `${city}`);
+const currentWeather = async (zip, country) => {
+  const nowWeather = await weather.getData(zip, country);
+  console.log("nowWeather:", nowWeather);
+}
+currentWeather (zip, country);
 
-weatherClient.getWeather().then(data => {
-  console.log(data, entries + providerLine);
-});
-
-document.querySelector("#main").textContent =  `The weather in ${this.city} currently is ${getWeather()}`
-
+document.querySelector("#main").textContent =  `The weather in ${this.city} currently is ${currentWeather()}`
